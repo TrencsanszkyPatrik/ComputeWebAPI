@@ -77,5 +77,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerWebAPI.Controllers.OsController",
+    "Method": "GetAllOses",
+    "RelativePath": "api/Os",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerWebAPI.Controllers.OsController",
+    "Method": "AddNewOs",
+    "RelativePath": "api/Os",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newos",
+        "Type": "ComputerWebAPI.Models.Dtos.AddOsDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
