@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "sxDTmvDFXi1GL1orIfzvPuceqZ2mB/EKyrII8NJl3Xo=",
+  "Source": "ComputerWebAPI",
+  "BasePath": "_content/ComputerWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
