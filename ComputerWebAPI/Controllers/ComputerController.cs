@@ -60,6 +60,26 @@ namespace ComputerWebAPI.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public ActionResult GetComputerById(int id)
+        {
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var computer = context.computers.Find(id);
+                    if (computer != null)
+                    {
+                        return Ok(new { message = "Sikeres lekérdezés", result = computer });
+                    }
+                    return NotFound(new { message = "A megadott ID-vel nem található számítógép", result = "" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Hiba történt az adat lekérésekor", error = ex.Message });
+            }
+        }
 
     }
 }
