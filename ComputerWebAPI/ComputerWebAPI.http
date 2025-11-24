@@ -1,0 +1,6 @@
+@ComputerWebAPI_HostAddress = http://localhost:5234
+
+GET {{ComputerWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
