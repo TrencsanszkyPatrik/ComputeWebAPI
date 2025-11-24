@@ -75,7 +75,52 @@ namespace ComputerWebAPI.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var os =  context.oses.Find(id);
+                    if (os != null)
+                    {
+                        context.oses.Remove(os);
+                        context.SaveChanges();
+                        return Ok(new { message = "Sikeres törlés", result = os });
+                    }
+                    return NotFound(new { message = "Nincs ilyen számítógép", result = "" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Hiba", error = ex.Message });
+            }
+        }
 
+        [HttpPut]
+        public ActionResult UpdateOs(int id, AddOsDto updateos)
+        {
+
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var os = context.oses.Find(id);
+                    if (os != null)
+                    {
+                        os.Name = updateos.Name;
+                        context.SaveChanges();
+                        return Ok(new { message = "Sikeres frissítés", result = os });
+                    }
+                    return NotFound(new { message = "Nincs ilyen számítógép", result = "" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Hiba történt az adatok frissítésekor", error = ex.Message });
+            }
+        }
 
     }
 }
