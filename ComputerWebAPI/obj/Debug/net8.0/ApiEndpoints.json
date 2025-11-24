@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "ComputerWebAPI.Controllers.ComputerController",
+    "Method": "AddNewComputer",
+    "RelativePath": "api/Computer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comp",
+        "Type": "ComputerWebAPI.Models.Dtos.AddComputerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerWebAPI.Controllers.ComputerController",
+    "Method": "GetAllComputers",
+    "RelativePath": "api/Computer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
