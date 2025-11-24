@@ -43,8 +43,23 @@ namespace ComputerWebAPI.Controllers
             }
         }
 
-        
+        [HttpGet]
+        public ActionResult GetAllComputers()
+        {
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var computers = context.computers.ToList();
+                    return Ok(new { message = "Sikeres lekérdezés", result = computers });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Hiba történt az adatok lekérésekor", error = ex.Message });
+            }
+        }
 
-        
+
     }
 }
