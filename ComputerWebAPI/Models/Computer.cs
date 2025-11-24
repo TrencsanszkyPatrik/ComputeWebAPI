@@ -10,5 +10,7 @@
         public DateTime CreatedTime { get; set; }
         public int OsId { get; set; }
 
+        public Os Os { get; set; }
+
     }
 }

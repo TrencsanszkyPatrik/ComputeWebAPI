@@ -129,6 +129,18 @@
         }
       }
     },
+    "/api/Computer/with-os": {
+      "get": {
+        "tags": [
+          "Computer"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Os": {
       "get": {
         "tags": [
@@ -245,6 +257,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Os/with-computers": {
+      "get": {
+        "tags": [
+          "Os"
         ],
         "responses": {
           "200": {

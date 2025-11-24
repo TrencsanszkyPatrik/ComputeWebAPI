@@ -79,6 +79,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComputerWebAPI.Controllers.ComputerController",
+    "Method": "GetAllComputersWithOs",
+    "RelativePath": "api/Computer/with-os",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComputerWebAPI.Controllers.OsController",
     "Method": "GetAllOses",
     "RelativePath": "api/Os",
@@ -155,6 +165,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerWebAPI.Controllers.OsController",
+    "Method": "GettAllOsWithComputer",
+    "RelativePath": "api/Os/with-computers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

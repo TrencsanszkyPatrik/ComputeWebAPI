@@ -2,6 +2,7 @@
 using ComputerWebAPI.Models.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ComputerWebAPI.Controllers
 {
@@ -119,6 +120,26 @@ namespace ComputerWebAPI.Controllers
             catch (Exception ex)
             {
                 return BadRequest(new { message = "Hiba történt az adatok frissítésekor", error = ex.Message });
+            }
+        }
+
+        [HttpGet("with-computers")]
+        public ActionResult GettAllOsWithComputer()
+        {
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var oses = context.oses
+                        .Include(o => o.Computers)
+                        .ToList();
+
+                    return Ok(new { message = "Sikeres lekérdezés", result = oses });
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { message = "Hiba" });
             }
         }
 

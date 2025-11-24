@@ -1,8 +1,8 @@
-﻿namespace ComputerWebAPI.Models
+﻿namespace ComputerWebAPI.Models;
+public class Os
 {
-    public class Os
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-    }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public ICollection<Computer>? Computers { get; set; } 
 }
+
