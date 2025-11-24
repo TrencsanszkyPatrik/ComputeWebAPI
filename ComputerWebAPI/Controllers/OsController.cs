@@ -54,6 +54,27 @@ namespace ComputerWebAPI.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public ActionResult GetOsById(int id)
+        {
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var os = context.oses.Find(id);
+                    if (os != null)
+                    {
+                        return Ok(new { message = "Sikeres lekérdezés", result = os });
+                    }
+                    return NotFound(new { message = "Nem található os", result = "" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Hiba", error = ex.Message });
+            }
+        }
+
 
 
     }
