@@ -81,5 +81,56 @@ namespace ComputerWebAPI.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var computer = context.computers.Find(id);
+                    if (computer != null)
+                    {
+                        context.computers.Remove(computer);
+                        context.SaveChanges();
+                        return Ok(new { message = "Sikeres törlés", result = computer });
+                    }
+                    return NotFound(new { message = "Nincs ilyen számítógép", result = "" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Hiba", error = ex.Message });
+            }
+        }
+
+        [HttpPut]
+        public ActionResult UpdateComputer(int id, UpdateComputerDto comp)
+        {
+           
+            try
+            {
+                using (var context = new ComputerDbContext())
+                {
+                    var computer = context.computers.Find(id);
+                    if (computer != null)
+                    {
+                        computer.Brand = comp.Brand;
+                        computer.Type = comp.Type;
+                        computer.Display = comp.Display;
+                        computer.Memory = comp.Memory;
+                        computer.OsId = comp.OsId;
+                        context.SaveChanges();
+                        return Ok(new { message = "Sikeres frissítés", result = computer });
+                    }
+                    return NotFound(new { message = "Nincs ilyen számítógép", result = "" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Hiba történt az adatok frissítésekor", error = ex.Message });
+            } 
+        }
     }
+
 }

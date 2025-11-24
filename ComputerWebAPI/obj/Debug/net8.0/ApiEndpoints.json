@@ -27,9 +27,46 @@
   },
   {
     "ContainingType": "ComputerWebAPI.Controllers.ComputerController",
+    "Method": "UpdateComputer",
+    "RelativePath": "api/Computer",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "comp",
+        "Type": "ComputerWebAPI.Models.Dtos.UpdateComputerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerWebAPI.Controllers.ComputerController",
     "Method": "GetComputerById",
     "RelativePath": "api/Computer/{id}",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerWebAPI.Controllers.ComputerController",
+    "Method": "Delete",
+    "RelativePath": "api/Computer/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
